@@ -1,6 +1,15 @@
 import jax.numpy as jnp
+import jax.ops import index, index_add
 
-def calculate_modularity_gain(adj_matrix, communities, node, total_weight):
+def calculate_modularity_gain_vectorized(adj_matrix, communities, node, total_weight):
+    num_nodes = adj_matrix.shape[0]
+    num_communities = len(jnp.unique(communities))
+
+    # calculate community sums and totals
+    community_ids = jnp.arrange(num_communities)
+    community_matrix = jnp.zeros((num_nodes, num_communities))
+    community_matrix = index_add(community_matrix, index[jnp.arange(num_nodes), communities], 1)
+    
     # calculate k_i and identify the community of node i
     k_i = jnp.sum(adj_matrix[node])
     community_of_node = communities[node]
