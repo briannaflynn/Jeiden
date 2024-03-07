@@ -1,6 +1,17 @@
 import jax.numpy as jnp
 
 def aggregate_nodes(adj_matrix, communities):
+  """
+    Aggregates nodes within the same community into single nodes to create a condensed graph.
+    
+    Parameters:
+    - adj_matrix (jax.numpy.ndarray): The adjacency matrix of the graph.
+    - communities (jax.numpy.ndarray): Array indicating the community of each node.
+    
+    Returns:
+    - jax.numpy.ndarray: The adjacency matrix of the condensed graph, where each node represents a community.
+    - jax.numpy.ndarray: The new community assignments for the condensed graph.
+    """
 
   # first get the number of unique communities and new community assignments
   # new community assignments correspond to the index of each unique community in the aggregated graph - index the 'super-nodes'
