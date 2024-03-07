@@ -60,7 +60,11 @@ We can express the transformation of input adjacency matrix _A_ to _A'_ like thi
 $\ A' = C^{\top} A C \$
 
 $\ C^{\top} A \$ 
-is the multiplication of the transpose of the community assignment matrix $\ C^{\top} \$ by the original adjacency matrix $\ A \$. We take the resulting matrix, and multiply by the community matrix $\ C \$ again. This multiplication sums the weights of the edges between the communities, resulting in the adjacncy matrix for the aggregated graph - where each element is now the total weight of the edges between two communities. 
+is the multiplication of the transpose of the community assignment matrix 
+$\ C^{\top} \$ 
+by the original adjacency matrix $\ A \$. We take the resulting matrix, and multiply by the community matrix 
+$\ C \$
+again. This multiplication sums the weights of the edges between the communities, resulting in the adjacncy matrix for the aggregated graph - where each element is now the total weight of the edges between two communities. 
 
 
 
