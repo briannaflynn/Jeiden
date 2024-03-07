@@ -37,3 +37,15 @@ _k i, in_: The sum of the weights of the edges from node _i_ to nodes in a candi
 _k i_: Sum of the weights of the edges attacehd to node _i_
 
 _m_: sum of the weights of all edges in the graph
+
+## Step 2: Aggregate the nodes within the same community into a single node
+
+The aggregation of nodes in the Leiden algorithm involves combining all nodes within the same community into a single 'super node' in a new, aggregated graph.
+
+This step effectively redues the size of the graph while preserving community structure - operate on the condensed graph in next iterations.
+
+1. Aggregate the adjacency matrix: Sum the weights of edges between communities to create a new adjacency matrix representing the condensed graph.
+
+2. Update community assignments: Create a new community assignment array for the aggregated nodes.
+
+The ```aggregate_nodes``` function determines unique communiti8es, mapping each node first. A community matrix is then constructed where each row corresponds to a node an each column a community. This matrix indicates the membership of nodes to communities. The community matrix and adjacency matrix are multiplied to efffectively sum the weights of the edges between communities - two multiplications allow us to aggregate both the rows and columns. New community assignments simply correspond to the index of each unique community in the aggregated graph.
