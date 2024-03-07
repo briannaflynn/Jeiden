@@ -7,9 +7,11 @@ Main steps of the Leiden algorihtm
 
 ```modgain.py```
 
-3. Aggregation of Nodes: Once local moves cannot improve modularity, nodes within the same community are aggregated into a single node, and the first step is repeated
+2. Aggregation of Nodes: Once local moves cannot improve modularity, nodes within the same community are aggregated into a single node, and the first step is repeated
 
-4. Refinement: The communities found in the previous step are refined to distribute nodes more evenly.
+```aggregate.py```
+
+3. Refinement: The communities found in the previous step are refined to distribute nodes more evenly.
 
 For JAX implementation, focusing on vectorization and minimizing explicit loops where possible.
 
