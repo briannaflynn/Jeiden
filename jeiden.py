@@ -1,15 +1,19 @@
 from jax import jit
 import jax.numpy as jnp
 # update this later
-from modgain import *
+from modgain import calculate_modularity_gain_vectorized
 from aggregate import *
 
-def jeiden_algorithm_step(adj_matrix, communities, total_weight):
+def jeiden_algorithm_step(adj_matrix, communities, total_weight, max_iter, leiden_resolution):
     
     # Base case for recursion could be defined here something like set a `max_iter` value or set based on change in modularity relative to a selected leiden resolution
 
     # Calculate modularity gain and move nodes
-    new_communities = calculate_modularity_gain_vectorized(adj_matrix, communities, total_weight)
+    new_communities, modularity_gain = calculate_modularity_gain_vectorized(adj_matrix, communities, total_weight)
+
+    # Check if the modularity gain is significant compared to leiden_resolution
+    if max_iter <= 0 or modularity_gain < leiden_resolution:
+        return adj_matrix, communities, current_modularity
     
     # Aggregate nodes based on the new community assignments
     # new_adj_matrix, new_communities = aggregate_nodes(adj_matrix, new_communities)
