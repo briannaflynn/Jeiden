@@ -7,10 +7,10 @@ Jeiden brings to the research and data science community a tool that is both fas
 Jeiden is an implementation of the Leiden algorithm designed for fast, real-time analysis of community structure in large, dynamic graph network data. By leveraging JAX's capabilities for high-performance numerical computing, JAX-Leiden provides a scalable and efficient solution for community detection, offering significant improvements over traditional methods.
 
 ### Key Features
-* Real-Time Analysis: Perform community detection in real-time, even on large and dynamic networks.
-* High Performance: Utilize JAX's efficiency and speed for fast computation and analysis.
-* Scalability: Designed to scale with your data, from small networks to large, complex systems.
-* Open Source: Contribute to and improve JAX-Leiden through its open-source community.
+* **Real-Time Analysis:** Perform community detection in real-time, even on large and dynamic networks.
+* **High Performance:** Utilize JAX's efficiency and speed for fast computation and analysis.
+* **Scalability:** Designed to scale with your data, from small networks to large, complex systems.
+* **Open Source:** Contribute to and improve JAX-Leiden through its open-source community.
 
 Main steps of the Leiden algorihtm 
 
