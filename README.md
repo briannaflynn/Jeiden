@@ -1,5 +1,5 @@
 # Jeiden: Real-Time Community Detection
-JAX implentation of the Leiden algorithm for community detection
+JAX implementation of the Leiden algorithm for community detection
 
 Jeiden brings to the research and data science community a tool that is both fast and accurate, capable of handling the increasing complexity and scale of network data. By making this tool open-source, I aim to foster innovation, support discovery, and empower users to reveal intricate patterns within their data.
 
